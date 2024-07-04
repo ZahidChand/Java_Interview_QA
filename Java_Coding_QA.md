@@ -212,3 +212,86 @@ class SortArray {
     }
 }
 ```
+## 11. How Do You Merge Two Lists in Java ?
+
+### Code
+```java
+import java.util.*;
+
+class MergeTwoList {
+    public static void main(String[] args) {
+        LinkedList<Integer> l1 = new LinkedList<Integer>();
+        LinkedList<Integer> l2 = new LinkedList<Integer>();
+
+        // Adding elements to the first list
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
+        l1.add(5);
+        System.out.println("List One: " + l1); // List One: [1, 2, 3, 4, 5]
+
+        // Adding elements to the second list
+        l2.add(10);
+        l2.add(12);
+        l2.add(13);
+        l2.add(14);
+        l2.add(15);
+        System.out.println("List Two: " + l2); // List Two: [10, 12, 13, 14, 15]
+
+        // Merging lists using addAll()
+        l1.addAll(l2);
+        System.out.println("Merged List: " + l1); // Merged List: [1, 2, 3, 4, 5, 10, 12, 13, 14, 15]
+    }
+}
+```
+## 12) How Do You Find the First and Second Largest Number in an Array in Java ?
+
+### Code
+```java
+import java.util.*;
+
+class FirstAndSecondLargestNo {
+    public static void main(String[] args) {
+        int a[] = {1, 2, 3, 16, 4, 5, 4, 19, 1, 2, 4, 1};
+        System.out.println("Original Array: " + Arrays.toString(a));
+
+        // Using HashSet to remove duplicates
+        HashSet<Integer> hs = new HashSet<>();
+        for (int i = 0; i < a.length; i++) {
+            hs.add(a[i]);
+        }
+        System.out.println("After Removing Duplicates From Array: " + hs);
+
+        // Converting HashSet to array
+        Integer[] sortedArray = hs.toArray(new Integer[0]);
+        Arrays.sort(sortedArray);
+        System.out.println("Sorted Array: " + Arrays.toString(sortedArray));
+
+        // Finding first and second largest numbers
+        System.out.println("First Largest: " + sortedArray[sortedArray.length - 1]);
+        System.out.println("Second Largest: " + sortedArray[sortedArray.length - 2]);
+    }
+}
+```
+## 13) How Do You Get the Sum of All Elements in an Integer Array in Java?
+
+### Code
+```java
+import java.util.*;
+
+class SumOfArrays {
+    public static void main(String[] args) {
+        int a[] = {1, 2, 3, 4, 5};
+        int sum = 0;
+        System.out.println("Array Before Sum: " + Arrays.toString(a));
+
+        // Calculating sum of array elements
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+
+        System.out.println("Total Sum: " + sum); // Total Sum: 15
+    }
+}
+
