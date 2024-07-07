@@ -294,4 +294,67 @@ class SumOfArrays {
         System.out.println("Total Sum: " + sum); // Total Sum: 15
     }
 }
+```
+## 14) Reverse a LinkedList in Java ?
+
+### Code
+```java
+import java.util.*;
+
+class ReverseLinkedList {
+    public static void main(String[] args) {
+        LinkedList<Integer> ls = new LinkedList<Integer>();
+        LinkedList<Integer> revList = new LinkedList<>();
+
+        // Adding elements to the original list
+        ls.add(10);
+        ls.add(20);
+        ls.add(30);
+        ls.add(40);
+        ls.add(50);
+        System.out.println("Original List: " + ls); // Original List: [10, 20, 30, 40, 50]
+
+        // Reversing the list
+        for (int i = ls.size() - 1; i >= 0; i--) {
+            revList.add(ls.get(i));
+        }
+        System.out.println("Reversed List: " + revList); // Reversed List: [50, 40, 30, 20, 10]
+    }
+}
+```
+## 15) Write a Program to Find the First Non-Repeating Character in a String in Java?
+
+### Code
+```java
+import java.util.*;
+
+class FirstNonRepeatingChar {
+    public static void main(String[] args) {
+        String str = "hello";
+        char c = '\0';
+
+        // Finding the first non-repeating character
+        for (int i = 0; i < str.length(); i++) {
+            boolean isRepeating = false;
+            for (int j = 0; j < str.length(); j++) {
+                if (i != j && str.charAt(i) == str.charAt(j)) {
+                    isRepeating = true;
+                    break;
+                }
+            }
+            if (!isRepeating) {
+                c = str.charAt(i);
+                break;
+            }
+        }
+
+        // Printing the result
+        if (c != '\0') {
+            System.out.println("First non-repeating character: " + c); // First non-repeating character: h
+        } else {
+            System.out.println("No non-repeating character found."); // No non-repeating character found.
+        }
+    }
+}
+```
 
