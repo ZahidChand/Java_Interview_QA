@@ -357,4 +357,42 @@ class FirstNonRepeatingChar {
     }
 }
 ```
+## 16) How Do You Merge Two LinkedLists in Java?
 
+### Code
+```java
+import java.util.*;
+
+class MergeLinkedList {
+    public static void main(String[] args) {
+        LinkedList<Integer> l1 = new LinkedList<>();
+        LinkedList<Integer> l2 = new LinkedList<>();
+
+        // Adding elements to the first list
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
+
+        // Adding elements to the second list
+        l2.add(11);
+        l2.add(12);
+        l2.add(13);
+        l2.add(14);
+
+        System.out.println("List One: " + l1); // List One: [1, 2, 3, 4]
+        System.out.println("List Two: " + l2); // List Two: [11, 12, 13, 14]
+
+        // One Way
+        // l1.addAll(l2);
+        // System.out.println("After Merging: " + l1); // After Merging: [1, 2, 3, 4, 11, 12, 13, 14]
+
+        // Second Way: Manually adding elements from l2 to l1
+        for (int i = 0; i < l2.size(); i++) {
+            l1.add(l2.get(i));
+        }
+
+        System.out.println("After Merging: " + l1); // After Merging: [1, 2, 3, 4, 11, 12, 13, 14]
+    }
+}
+```
