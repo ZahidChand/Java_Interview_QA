@@ -462,3 +462,24 @@ class MaximumElement {
     }
 }
 ```
+## 20) How Do You Find the Minimum Element in an Array in Java?
+
+### Code
+```java
+import java.util.*;
+
+class MinimumElement {
+    public static void main(String[] args) {
+        int a[] = {12, 34, 90, 13, 45, 67, 3};
+        System.out.println("List of elements: " + Arrays.toString(a)); // List of elements: [12, 34, 90, 13, 45, 67, 3]
+        
+        int min = a[0];
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] < min) {
+                min = a[i];
+            }
+        }
+        System.out.println("Min element: " + min); // Min element: 3
+    }
+}
+```
