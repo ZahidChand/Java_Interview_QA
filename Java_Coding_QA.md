@@ -441,3 +441,24 @@ class MiddleElementLinkedList {
     }
 }
 ```
+## 19) How Do You Find the Maximum Element in an Array in Java?
+
+### Code
+```java
+import java.util.*;
+
+class MaximumElement {
+    public static void main(String[] args) {
+        int a[] = {12, 34, 90, 13, 45, 67};
+        System.out.println("List of elements: " + Arrays.toString(a)); // List of elements: [12, 34, 90, 13, 45, 67]
+        
+        int max = a[0];
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > max) {
+                max = a[i];
+            }
+        }
+        System.out.println("Max element: " + max); // Max element: 90
+    }
+}
+```
