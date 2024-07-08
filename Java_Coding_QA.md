@@ -418,3 +418,26 @@ class ReverseString {
     }
 }
 ```
+## 18) How Do You Find the Middle Element in a LinkedList in Java?
+
+### Code
+```java
+import java.util.*;
+
+class MiddleElementLinkedList {
+    public static void main(String[] args) {
+        LinkedList<Integer> l1 = new LinkedList<Integer>();
+        l1.add(10);
+        l1.add(20);
+        l1.add(30);
+        l1.add(40);
+        l1.add(50);
+        l1.add(60);
+        l1.add(70);
+        System.out.println("List: " + l1); // List: [10, 20, 30, 40, 50, 60, 70]
+        
+        int middleIndex = l1.size() / 2;
+        System.out.println("Middle element: " + l1.get(middleIndex)); // Middle element: 40
+    }
+}
+```
