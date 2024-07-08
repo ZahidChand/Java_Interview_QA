@@ -396,3 +396,25 @@ class MergeLinkedList {
     }
 }
 ```
+## 17) How Do You Reverse the Order of Words in a String in Java ?
+
+### Code
+```java
+class ReverseString {
+    public static void main(String[] args) {
+        String str = "i love programming language very much";
+        String result = "";
+
+        // Split the string into words
+        String[] words = str.split(" ");
+        System.out.println("Before Reverse: " + str); // Before Reverse: i love programming language very much
+
+        // Reverse the order of words
+        for (int i = words.length - 1; i >= 0; i--) {
+            result += words[i] + " ";
+        }
+
+        System.out.println("After Reverse: " + result.trim()); // After Reverse: much very language programming love i
+    }
+}
+```
