@@ -483,3 +483,57 @@ class MinimumElement {
     }
 }
 ```
+## 21) How Do You Find an Element in an Array in Java?
+
+### Code
+```java
+import java.util.*;
+
+class SearchElement {
+    public static void main(String[] args) {
+        int a[] = {12, 34, 90, 13, 45, 67, 3};
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the element to search: ");
+        int element = sc.nextInt();
+        boolean elementFound = false;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == element) {
+                elementFound = true;
+                break;
+            }
+        }
+
+        if (elementFound) {
+            System.out.println("Element Found");
+        } else {
+            System.out.println("Element Not Found");
+        }
+    }
+}
+```
+## 22) How Do You Sort an Array in Ascending Order in Java?
+
+### Code
+```java
+import java.util.*;
+
+class SortInAsc {
+    public static void main(String[] args) {
+        int a[] = {12, 34, 90, 13, 45, 67, 3};
+        System.out.println("Before Sorting: " + Arrays.toString(a)); // Before Sorting: [12, 34, 90, 13, 45, 67, 3]
+
+        // Bubble sort algorithm
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.println("After Sorting: " + Arrays.toString(a)); // After Sorting: [3, 12, 13, 34, 45, 67, 90]
+    }
+}
+```
