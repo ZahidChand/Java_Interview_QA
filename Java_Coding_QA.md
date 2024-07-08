@@ -537,3 +537,28 @@ class SortInAsc {
     }
 }
 ```
+## 23) How Do You Sort an Array in Descending Order in Java?
+
+### Code
+```java
+import java.util.*;
+
+class SortInDesc {
+    public static void main(String[] args) {
+        int a[] = {12, 34, 90, 13, 45, 67, 3};
+        System.out.println("Before Sorting: " + Arrays.toString(a)); // Before Sorting: [12, 34, 90, 13, 45, 67, 3]
+
+        // Bubble sort algorithm for descending order
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] < a[j]) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.println("After Sorting: " + Arrays.toString(a)); // After Sorting: [90, 67, 45, 34, 13, 12, 3]
+    }
+}
+```
