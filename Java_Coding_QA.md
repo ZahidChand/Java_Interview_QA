@@ -562,3 +562,34 @@ class SortInDesc {
     }
 }
 ```
+## 24) Find the First Repeating Character in a String
+
+### Code
+```java
+class FirstRepeatingChar {
+    public static void main(String[] args) {
+        String str = "hello";
+        char ch = '\0';
+        boolean found = false;
+        
+        for (int i = 0; i < str.length() - 1; i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    ch = str.charAt(i);
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                break;
+            }
+        }
+        
+        if (found) {
+            System.out.println("First Repeating Character: " + ch); // Output: First Repeating Character: l
+        } else {
+            System.out.println("No Repeating Characters Found"); // Output: No Repeating Characters Found
+        }
+    }
+}
+```
