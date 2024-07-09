@@ -593,3 +593,30 @@ class FirstRepeatingChar {
     }
 }
 ```
+## 25) Count Occurrences of Characters in a String
+
+### Code
+```java
+class FindNoOfOcc {
+    public static void main(String[] args) {
+        String str = "i love programming language";
+        str = str.replace(" ", ""); // Remove spaces
+
+        // Create an array to store the count of each character
+        int[] count = new int[256]; // Array size 256 for all ASCII characters
+
+        // Iterate over the string and count the occurrences of each character
+        for (int i = 0; i < str.length(); i++) {
+            count[str.charAt(i)]++;
+        }
+
+        // Print the count of each character
+        System.out.println("Character occurrences:");
+        for (int i = 0; i < 256; i++) {
+            if (count[i] > 0) {
+                System.out.println((char) i + ": " + count[i]);
+            }
+        }
+    }
+}
+```
