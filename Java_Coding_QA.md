@@ -721,3 +721,27 @@ class Anagram {
     }
 }
 ```
+## 30) Get Character form string
+### Code
+```java
+class GetCharacter {
+    public static void main(String[] args) {
+        String str = "hello";
+        int n = 1;
+        System.out.println("Output :" +  str.charAt(n)); // Output : e
+    }
+}
+```
+## 31) Convert string to array
+### Code
+```java
+import java.util.*;
+
+class ConvertStringToArray {
+    public static void main(String[] args) {
+        String str = "hello world";
+        String[] res = str.split(" ");
+        System.out.println(Arrays.toString(res)); // [hello, world]
+    }
+}
+```
