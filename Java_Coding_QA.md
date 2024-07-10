@@ -620,3 +620,45 @@ class FindNoOfOcc {
     }
 }
 ```
+## 26) Print Even-Length Words from a String
+
+### Code
+```java
+class PrintEven {
+    public static void main(String[] args) {
+        String str = "This is a java programming language";
+        String[] words = str.split(" ");
+        
+        for (String word : words) {
+            if (word.length() % 2 == 0) {
+                System.out.println(word);
+            }
+        }
+    }
+}
+This
+is
+java
+language
+```
+## 27) Print Odd-Length Words from a String
+
+### Code
+```java
+class PrintOdd {
+    public static void main(String[] args) {
+        String str = "This is a java programming language";
+        String[] words = str.split(" ");
+        
+        for (String word : words) {
+            if (word.length() % 2 != 0) {
+                System.out.println(word);
+            }
+        }
+    }
+}
+a
+programming
+
+```
+
