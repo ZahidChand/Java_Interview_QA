@@ -662,3 +662,62 @@ programming
 
 ```
 
+## 28) Insert 2nd string in 1st string based on index
+### Code
+```java
+class MergeTwoStrings {
+   public static void main(String[] args) {
+        String str1 = "Hello World";
+        String str2 = "This is java programming ";
+        int n = 5;
+        String result = new String();
+        for(int i=0;i<=str1.length()-1;i++){
+            result += str1.charAt(i);
+            if(i == n){
+                result += str2;
+            }
+        }
+        System.out.println("Result "+ result); // Result: HelloThis is java programming  World
+    }
+}
+```
+## 29) Check given string is anagram
+### Code
+```java
+import java.util.*;
+
+class Anagram {
+    public static void main(String[] args) {
+        String s1 = "hello";
+        String s2 = "ollhe";
+        boolean isAnagram = true;
+
+        // Check if lengths are not equal
+        if (s1.length() != s2.length()) {
+            isAnagram = false;
+        } else {
+            char[] charArray1 = s1.toCharArray();
+            char[] charArray2 = s2.toCharArray();
+            Arrays.sort(charArray1);
+            Arrays.sort(charArray2);
+
+            String sortedS1 = new String(charArray1);
+            String sortedS2 = new String(charArray2);
+
+            // Compare the sorted strings
+            for (int i = 0; i < sortedS1.length(); i++) {
+                if (sortedS1.charAt(i) != sortedS2.charAt(i)) {
+                    isAnagram = false;
+                    break;
+                }
+            }
+        }
+
+        if (isAnagram) {
+            System.out.println("Anagram"); // Anagram
+        } else {
+            System.out.println("Not Anagram");
+        }
+    }
+}
+```
