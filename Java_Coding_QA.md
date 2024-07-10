@@ -790,9 +790,39 @@ class ArrayEquality {
         }
 
         if (isEqual) {
-            System.out.println("Both arrays are equal"); // Both arrays are not equal
+            System.out.println("Both arrays are equal"); // Both arrays are equal
         } else {
             System.out.println("Both arrays are not equal");
+        }
+    }
+}
+```
+## 34) Find armstrong no in java?
+### Code
+```java
+import java.util.*;
+
+class ArmstrongNo {
+    public static void main(String[] args) {
+        int result = 0;
+        int d;
+        int temp;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a number");
+        int no = sc.nextInt();
+        temp = no;
+
+        while (no != 0) {
+            d = no % 10;                 // Extract the last digit
+            no = no / 10;                // Remove the last digit from no
+            result = result + d * d * d;  // Add the cube of the digit to result
+        }
+
+        if (temp == result) {
+            System.out.println("Given number is an Armstrong number");
+        } else {
+            System.out.println("Given number is not an Armstrong number");
         }
     }
 }
