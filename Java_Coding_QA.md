@@ -745,3 +745,55 @@ class ConvertStringToArray {
     }
 }
 ```
+## 32) Swap pair of character in java
+### Code
+```java
+import java.util.*;
+
+class SwapPairOfChar {
+    public static void main(String[] args) {
+        String str = "javaisproglang";
+        System.out.println("Before swapping " + str);
+        char[] ch = str.toCharArray();
+        for(int i = 0; i < ch.length - 1; i += 2) {
+            char temp = ch[i];
+            ch[i] = ch[i + 1];
+            ch[i + 1] = temp;
+        }
+        String res = new String(ch);
+        System.out.println("After swapping " + res); // ajvaipsrolgagn
+    }
+}
+```
+## 33) Check is both arrays are equal or not?
+### Code
+```java
+import java.util.*;
+
+class ArrayEquality {
+    public static void main(String[] args) {
+        int[] a = {1, 3, 9, 5, 7, 8};
+        int[] b = {1, 3, 5, 7, 8, 9};
+        boolean isEqual = true;
+
+        if (a.length != b.length) {
+            isEqual = false;
+        } else {
+            Arrays.sort(a);
+            Arrays.sort(b);
+            for (int i = 0; i < a.length; i++) {
+                if (a[i] != b[i]) {
+                    isEqual = false;
+                    break;
+                }
+            }
+        }
+
+        if (isEqual) {
+            System.out.println("Both arrays are equal"); // Both arrays are not equal
+        } else {
+            System.out.println("Both arrays are not equal");
+        }
+    }
+}
+```
