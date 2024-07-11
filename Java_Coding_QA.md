@@ -827,3 +827,586 @@ class ArmstrongNo {
     }
 }
 ```
+## 35) Sum of digits?
+
+### Code
+
+```java
+class SumOfDigits{
+    public static void main(String args[]){
+        int no = 80819;
+        int sum = 0;
+        int d;
+        while (no != 0){
+            d = no % 10;
+            no = no / 10;
+            sum += d;
+        }
+        System.out.println("Sum of digits "+ sum);
+    }
+}
+```
+## 36) Find duplicate from an array?
+
+### Code
+
+```java
+class FindDuplicateInArray{
+    public static void main(String args[]){
+        int [] a = {1,2,4,2,6,9};
+        boolean isDuplicate = false;
+        int duplicate = 0;
+        
+        for(int i = 0 ; i < a.length; i++){
+            for(int j = i + 1; j < a.length; j++){
+                if(a[i] == a[j]){
+                    isDuplicate = true;
+                    duplicate = a[i];
+                    break;
+                }
+            }
+            if(isDuplicate){
+                break;
+            }
+        }
+        
+        if(isDuplicate){
+            System.out.println("Duplicate found " + duplicate); // Duplicate found 2
+        } else {
+            System.out.println("Duplicate not found");
+        }
+    }
+}
+
+```
+## 37) Find second largest element in int array?
+
+### Code
+
+```java
+import java.util.*;
+
+class SecondLargestNoInArray {
+    public static void main(String args[]) {
+        int[] a = {2, 4, 7, 8, 6, 3, 1};
+        
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] < a[j]) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        
+        System.out.println("Second largest " + a[1]); // Second largest 7
+    }
+}
+```
+## 38) Reverse no?
+
+### Code
+
+```java
+import java.util.Scanner;
+
+class ReverseNo {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no");
+        int no = sc.nextInt();
+        int rev = 0;
+        
+        while (no != 0) {
+            int d = no % 10;
+            no = no / 10;
+            rev = rev * 10 + d;
+        }
+        
+        System.out.println("After reverse " + rev);
+    }
+}
+```
+## 39) Find a perfect no?
+
+### Code
+
+```java
+import java.util.Scanner;
+
+class PerfectNo {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no");
+        int no = sc.nextInt();
+        int s = 0;
+        
+        for (int i = 1; i < no; i++) {
+            if (no % i == 0) {
+                s = s + i;
+            }
+        }
+        
+        if (s == no) {
+            System.out.println("Perfect no");
+        } else {
+            System.out.println("Not a perfect no");
+        }
+    }
+}
+```
+## 40) Find the factorial no
+
+### Code
+
+```java
+import java.util.Scanner;
+
+class FactorNo {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no");
+        int no = sc.nextInt();
+        int s = 1;
+        
+        for (int i = 1; i <= no; i++) {
+            s = s * i;
+        }
+        
+        System.out.println("Factorial no " + s);
+    }
+}
+```
+## 41) Find power given x and y?
+
+### Code
+
+```java
+import java.util.Scanner;
+
+class FindPower {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int p = 1;
+        
+        for (int i = 1; i <= y; i++) {
+            p = p * x;
+        }
+        
+        System.out.println("Power " + p);
+    }
+}
+```
+## 42) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+//Output
+*
+**
+***
+****
+*****
+
+```
+## 43) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        int p;
+        for (int i = 1; i <= 5; i++) {
+            p = 5;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p--;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+
+5
+54
+543
+5432
+54321
+
+```
+
+## 44) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        int p;
+        for (int i = 1; i <= 5; i++) {
+            p = 1;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//Output
+1
+12
+123
+1234
+12345
+
+```
+
+## 46) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        int p = 1;
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+1
+23
+456
+78910
+1112131415
+
+```
+## 46) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        int p = 1;
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+1
+23
+456
+78910
+
+```
+
+## 47) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        char p = 'A';
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+            }
+            System.out.println();
+            p++;
+        }
+    }
+}
+
+//Output
+A
+BB
+CCC
+DDDD
+
+```
+
+## 48) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        char p;
+        for (int i = 1; i <= 4; i++) {
+            p = 'E';
+            for (int j = 1; j <= i; j++) {
+                System.out.print(p);
+                p--;
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//output
+E
+ED
+EDC
+EDCB
+
+```
+
+## 49) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 5; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+*****
+****
+***
+**
+*
+
+```
+## 50) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 5; i >= 1; i--) {
+            int n = 1;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(n);
+                n++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+12345
+1234
+123
+12
+1
+
+```
+## 51) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        char c = 'A';
+        for (int i = 5; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+            c++;
+        }
+    }
+}
+
+//Output
+AAAAA
+BBBB
+CCC
+DD
+E
+
+```
+
+## 52) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 1; i <= 5; i++) {
+            // Print spaces
+            for (int k = 4; k >= i; k--) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+    *
+   **
+  ***
+ ****
+*****
+
+```
+
+## 53) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 1; i <= 5; i++) {
+            // Print spaces
+            for (int k = 4; k >= i; k--) {
+                System.out.print(" ");
+            }
+            // Print stars and spaces
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+```
+## 54) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 5; i >= 1; i--) {
+            // Print spaces
+            for (int k = 4; k >= i; k--) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+*****
+ ****
+  ***
+   **
+    *
+
+```
+## 55) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 5; i >= 1; i--) {
+            // Print spaces
+            for (int k = 4; k >= i; k--) {
+                System.out.print(" ");
+            }
+            // Print stars and spaces
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+ * * * * *
+  * * * *
+   * * *
+    * *
+     *
+```
+## 56) Pattern
+
+### Code
+
+```java
+class Pattern {
+    public static void main(String args[]) {
+        for (int i = 4; i >= 1; i--) {
+            int n = 1;
+            // Print spaces
+            for (int k = 3; k >= i; k--) {
+                System.out.print(" ");
+            }
+            // Print numbers with spaces
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" " + n);
+                n++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+//Output
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+```
