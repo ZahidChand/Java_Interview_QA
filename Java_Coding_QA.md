@@ -1536,3 +1536,49 @@ class StreamExample {
     }
 }
 ```
+## 61) Filter Employees by Age Using Stream API
+
+### Question
+
+Given a list of employees with their names and ages, use Java Streams to filter and return the names of employees whose age is greater than or equal to 25.
+
+### Code
+
+```java
+import java.util.*;
+import java.util.stream.Collectors;
+
+class StreamExample {
+    public static void main(String[] args) {
+        LinkedList<Employees> ls = new LinkedList<>();
+        ls.add(new Employees("Jessy", 22));
+        ls.add(new Employees("Walter", 50));
+        ls.add(new Employees("Hank", 18));
+        ls.add(new Employees("Skyler", 45));
+        
+        List<String> res = ls.stream()
+                             .filter(e -> e.age >= 25)
+                             .map(e -> e.name)
+                             .collect(Collectors.toList());
+        
+        System.out.println(res); // Output here: [Walter, Skyler]
+    }
+}
+
+class Employees {
+    String name;
+    int age;
+    
+    // Constructor to initialize name and age
+    Employees(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Override toString method for meaningful output
+    @Override
+    public String toString() {
+        return "Employees{name='" + name + "', age=" + age + "}";
+    }
+}
+```
