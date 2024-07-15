@@ -1410,3 +1410,129 @@ class Pattern {
    1 2
     1
 ```
+
+## 57) Implement Pow(x, n)
+
+### Question
+
+Implement pow(x, n), which calculates x raised to the power n (i.e., \( x^n \)).
+
+Example 1:
+
+Input: x = 2.00000, n = 10  
+Output: 1024.00000
+
+Example 2:
+
+Input: x = 2.10000, n = 3  
+Output: 9.26100
+
+Example 3:
+
+Input: x = 2.00000, n = -2  
+Output: 0.25000  
+Explanation: \( 2^{-2} = \frac{1}{2^2} = \frac{1}{4} = 0.25 \)
+
+### Code
+
+```java
+class Solution {
+    public double myPow(double x, int n) {
+        if (n == 0) {
+            return 1.0;
+        }
+        double result = 1.0;
+        // Converting to absolute number so that +ve and -ve cases can be handled
+        long absNo = n > 0 ? n : -n;
+        for (int i = 0; i < absNo; i++) {
+            result *= x;
+        }
+        return n < 0 ? 1.0 / result : result;
+    }
+}
+```
+## 58) Print Sequence 1 to 100 without Loop
+
+### Question
+
+Print numbers from 1 to 100 without using a loop.
+
+### Code
+
+```java
+class PrintSequence {
+    public void print(int i) {
+        if (i <= 100) {
+            System.out.println(i);
+            print(i + 1);
+        }
+    }
+
+    public static void main(String args[]) {
+        PrintSequence p = new PrintSequence();
+        p.print(1);
+    }
+}
+```
+## 59) Find Square Root of Even Numbers without Using Stream
+
+### Question
+
+Find the square of even numbers in an array without using Java Streams.
+
+### Code
+
+```java
+import java.util.*;
+
+class SqRoot {
+    public static void main(String args[]) {
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int result = 0;
+        
+        System.out.println(Arrays.toString(a));
+        
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] % 2 == 0) {
+                result += a[i] * a[i];
+            }
+        }
+        
+        System.out.println(result); // Output here: 120
+    }
+}
+```
+## 60) Using Stream to Find Square of Even Numbers
+
+### Question
+
+Using Java Streams, find the square of even numbers in a list and calculate their total sum.
+
+### Code
+
+```java
+import java.util.*;
+import java.util.stream.Collectors;
+
+class StreamExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> l1 = new ArrayList<>();
+        l1.addAll(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        
+        System.out.println(l1);
+        
+        int total = 0;
+        
+        List<Integer> result = l1.stream()
+                                 .filter(e -> e % 2 == 0)
+                                 .map(e -> e * e)
+                                 .collect(Collectors.toList());
+        
+        for (int res : result) {
+            total += res;
+        }
+        
+        System.out.println(total); // Output here: 120
+    }
+}
+```
