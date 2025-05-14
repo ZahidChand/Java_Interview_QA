@@ -1582,3 +1582,34 @@ class Employees {
     }
 }
 ```
+## 62) WAP in Java to demonstrate static and instance method references
+
+### Code
+
+```java
+import java.util.function.Consumer;
+
+class MethodReference {
+    public static void staticMethod(String str) {
+        System.out.println("Value Printed By Static Method " + str);
+    }
+    
+    public void instanceMethod(String str) {
+        System.out.println("Value Printed By Instance Method " + str);
+    }
+        
+    public static void main(String[] args) {
+        MethodReference mr = new MethodReference();
+        
+        // Using Static Method Reference
+        Consumer<String> staticMethodValue = MethodReference::staticMethod;
+        staticMethodValue.accept("Static Method Called");
+        
+        // Using Instance Method Reference
+        Consumer<String> instanceMethodValue = mr::instanceMethod;
+        instanceMethodValue.accept("Instance Method Called");
+    }
+}
+
+```
+
