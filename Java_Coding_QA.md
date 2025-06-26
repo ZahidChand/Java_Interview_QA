@@ -1677,5 +1677,25 @@ public class Main
 	    
 	}
 }
+
 ```
 
+## 66) How do you find common elements between two arrays?
+
+### Code
+
+```java
+
+import java.util.*;
+import java.util.stream.*;
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> l1 = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
+        List<Integer> l2 = Arrays.asList(12, 89, 42, 45, 75, 34, 90, 91);
+        
+        List<Integer> res = l1.stream().filter(l2::contains).collect(Collectors.toList());
+        System.out.println(res);	//[45, 12, 75, 89]
+    }
+}
+
+```
