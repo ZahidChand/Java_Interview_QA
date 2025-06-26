@@ -1654,3 +1654,28 @@ public class Main
 
 ```
 
+## 65) How do you get three maximum numbers and three minimum numbers from the given list of integers?
+
+### Code
+
+```java
+
+import java.util.*;
+import java.util.stream.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    List<Integer> l1 = Arrays.asList(12,32,41,11,5,19,76,34,80,59,87,31);
+	    
+	    List<Integer> min3Val = l1.stream().sorted().limit(3).collect(Collectors.toList());
+	    System.out.println("3 Min Values Are "+ min3Val);		// 3 Min Values Are [5, 11, 12]
+	    
+	    List<Integer> max3Val = l1.stream().sorted((a,b)-> b.compareTo(a)).limit(3).collect(Collectors.toList());
+	    System.out.println("3 Max Values Are "+ max3Val);		// 3 Max Values Are [87, 80, 76]
+	    
+	    
+	}
+}
+```
+
