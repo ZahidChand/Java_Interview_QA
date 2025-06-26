@@ -1634,3 +1634,23 @@ public class Main
 
 ```
 
+## 64) How do you merge two unsorted arrays into single sorted array without duplicates?
+### Code
+
+```java
+import java.util.*;
+import java.util.stream.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	   Integer a[] = {11,42,31,40,25,69};
+	   Integer b[] = {69,67,78,29,10};
+	   
+	   List<Integer> res = Stream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().distinct().collect(Collectors.toList());
+	    System.out.println(res);		//[10, 11, 25, 29, 31, 40, 42, 67, 69, 78]
+	}
+}
+
+```
+
