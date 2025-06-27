@@ -1699,3 +1699,29 @@ public class Main {
 }
 
 ```
+
+## 67)  Given a string, write a program to count the occurrences of each character.
+
+### Code
+
+```java
+
+import java.util.*;
+import java.util.stream.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "this is java code";
+        String noSpaceStr = str.replaceAll("\\s", "");
+        
+        Map<Character,Long> res = noSpaceStr.chars()
+            .mapToObj(c -> (char) c)
+            .collect(Collectors.groupingBy(c -> c , Collectors.counting()));
+        
+        
+	     System.out.print("res" + res);		//res{a=2, c=1, s=2, d=1, t=1, e=1, v=1, h=1, i=2, j=1, o=1}
+	}
+}
+
+```
